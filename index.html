@@ -1,40 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>masking-tool</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <header>
-        <h1>マスキングツール</h1>
+      <h1>マスキングツール</h1>
     </header>
     <main>
-        <p>マスキングツールは、テキストをマスクするためのツールです。</p>
+      <p>マスキングツールは、テキストをマスクするためのツールです。</p>
 
-        <div class="container">
-            <!-- 左側：入力欄 -->
-            <div class="box">
-                <label for="textInput">入力欄</label>
-                <textarea id="textInput" placeholder="ここに文章を入力してください。"></textarea>
-            </div>
-            
-            <!-- 右側：出力欄 -->
-            <div class="box">
-                <label for="textOutput">出力欄</label>
-                <!-- 編集不可（readonly）にして結果表示専用にしています -->
-                <textarea id="textOutput" readonly placeholder="変換結果がここに表示されます。"></textarea>
-            </div>
+      <div class="container">
+        <!-- 左側：入力欄 -->
+        <div class="box">
+          <label for="textInput">入力欄</label>
+          <textarea
+            id="textInput"
+            placeholder="ここに文章を入力してください。"
+          ></textarea>
         </div>
-    
-          
-          <button type="button" id="maskButton">電話番号をマスキングする</button>
-    
+
+        <!-- 右側：出力欄 -->
+        <div class="box">
+          <label for="textOutput">出力欄</label>
+          <!-- 編集不可（readonly）にして結果表示専用にしています -->
+          <textarea
+            id="textOutput"
+            readonly
+            placeholder="変換結果がここに表示されます。"
+          ></textarea>
+        </div>
+      </div>
+
+      <button type="button" id="maskButton">電話番号をマスキングする</button>
     </main>
 
     <footer>
-        <p>© 2026 Masking Tool. All rights reserved.</p>
+      <p>© 2026 Masking Tool. All rights reserved.</p>
     </footer>
-</body>
+
+    <script src="js/main.js"></script>
+  </body>
 </html>
