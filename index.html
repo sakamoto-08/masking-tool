@@ -23,19 +23,18 @@
           ></textarea>
         </div>
 
-        <!-- 右側：出力欄 -->
+        <!-- 右側：出力欄（divに変更して装飾を効かせます） -->
         <div class="box">
           <label for="textOutput">出力欄</label>
-          <!-- 編集不可（readonly）にして結果表示専用にしています -->
-          <textarea
-            id="textOutput"
-            readonly
-            placeholder="変換結果がここに表示されます。"
-          ></textarea>
+          <div id="textOutput" style="white-space: pre-wrap">
+            変換結果がここに表示されます。
+          </div>
         </div>
       </div>
 
-      <button type="button" id="maskButton">電話番号をマスキングする</button>
+      <button type="button" id="maskButton">
+        電話番号を検出・ハイライトする
+      </button>
     </main>
 
     <footer>

@@ -1,16 +1,21 @@
 .container {
-    display: flex;
-    flex-wrap: wrap; /* 画面幅が狭くなったときに折り返す */
-    gap: 20px;       /* カラム間のすき間 */
-  }
-  
-  .box {
-    flex: 1;         /* 柔軟に伸縮させる */
-    min-width: 280px;/* 折り返しの基準となる最小幅 */
-    background: #e0e0e0;
-    padding: 20px;
-    font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif; /* フォントの種類 */
-    font-size: 16px; /* 文字の大きさ */
-    border: 1px solid #999;
-  }
-  
+  display: flex;
+  flex-wrap: wrap; /* 画面幅が狭くなったときに折り返す */
+  gap: 20px; /* カラム間のすき間 */
+}
+
+.box {
+  flex: 1; /* 柔軟に伸縮させる */
+  min-width: 280px; /* 折り返しの基準となる最小幅 */
+  background: #e0e0e0;
+  padding: 20px;
+  font-family:
+    "Hiragino Kaku Gothic ProN", Meiryo, sans-serif; /* フォントの種類 */
+  font-size: 16px; /* 文字の大きさ */
+  border: 1px solid #999;
+}
+
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+}

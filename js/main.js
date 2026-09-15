@@ -1,10 +1,22 @@
-// 電話番号を検出する関数
+// 1. 電話番号を検出して配列で返す関数（Issue #2）
 function detectPhoneNumbers(text) {
   const regex = /\d{2,4}-\d{2,4}-\d{4}/g;
-  return text.match(regex) || []; // マッチしない場合は空配列を返す
+  return text.match(regex) || [];
 }
 
-// 動作確認用
-const sampleText = "お問い合わせは 03-1234-5678 または 090-8765-4321 まで。";
-const result = detectPhoneNumbers(sampleText);
-console.log(result); // 出力: ['03-1234-5678', '090-8765-4321']
+// 2. 電話番号部分を span タグでハイライト化する関数（Issue #3）
+function highlightPhoneNumbers(text) {
+  const regex = /\d{2,4}-\d{2,4}-\d{4}/g;
+  return text.replace(regex, '<span class="highlight">$&</span>');
+}
+
+// 3. 画面連携（イベント処理）
+const textInput = document.getElementById("textInput");
+const textOutput = document.getElementById("textOutput");
+const maskButton = document.getElementById("maskButton");
+
+maskButton.addEventListener("click", function () {
+  const inputText = textInput.value;
+  const highlightedHtml = highlightPhoneNumbers(inputText);
+  textOutput.innerHTML = highlightedHtml;
+});
