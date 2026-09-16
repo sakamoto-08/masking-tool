@@ -20,3 +20,9 @@ maskButton.addEventListener("click", function () {
   const highlightedHtml = highlightPhoneNumbers(inputText);
   textOutput.innerHTML = highlightedHtml;
 });
+
+textOutput.addEventListener("click", (event) => {
+  if (event.target.classList.contains("highlight")) {
+    event.target.classList.toggle("disabled");
+  }
+});
