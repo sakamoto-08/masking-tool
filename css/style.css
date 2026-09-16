@@ -19,3 +19,10 @@
   background-color: yellow;
   font-weight: bold;
 }
+
+/* 除外（OFF）状態の見た目 */
+.highlight.disabled {
+  background-color: #ccc;
+  text-decoration: line-through;
+  opacity: 0.6;
+}
