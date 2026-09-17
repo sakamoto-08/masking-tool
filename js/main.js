@@ -14,6 +14,7 @@ function highlightPhoneNumbers(text) {
 const textInput = document.getElementById("textInput");
 const textOutput = document.getElementById("textOutput");
 const maskButton = document.getElementById("maskButton");
+const copyButton = document.getElementById("copyButton");
 
 maskButton.addEventListener("click", function () {
   const inputText = textInput.value;
@@ -25,4 +26,20 @@ textOutput.addEventListener("click", (event) => {
   if (event.target.classList.contains("highlight")) {
     event.target.classList.toggle("disabled");
   }
+});
+
+// コピー機能の実装（Issue #5）
+copyButton.addEventListener("click", () => {
+  // innerText で改行を含めたプレーンテキストを取得
+  const text = textOutput.innerText;
+
+  // クリップボードへ書き込み（非同期処理の完了後にフィードバック）
+  navigator.clipboard
+    .writeText(text)
+    .then(() => {
+      alert("コピーしました！");
+    })
+    .catch((err) => {
+      console.error("コピーに失敗しました:", err);
+    });
 });
