@@ -28,18 +28,32 @@ textOutput.addEventListener("click", (event) => {
   }
 });
 
-// コピー機能の実装（Issue #5）
+// コピーボタンのクリックイベント
 copyButton.addEventListener("click", () => {
-  // innerText で改行を含めたプレーンテキストを取得
-  const text = textOutput.innerText;
+  let copiedText = "";
 
-  // クリップボードへ書き込み（非同期処理の完了後にフィードバック）
-  navigator.clipboard
-    .writeText(text)
-    .then(() => {
-      alert("コピーしました！");
-    })
-    .catch((err) => {
-      console.error("コピーに失敗しました:", err);
-    });
+  // textOutput の中身（テキストノードやspan要素）を順番に走査
+  textOutput.childNodes.forEach((node) => {
+    // nodeType === 3 は純粋なテキストノード（ハイライトされていない部分）
+    if (node.nodeType === Node.TEXT_NODE) {
+      copiedText += node.textContent;
+    } 
+    // span要素（.highlight）の場合
+    else if (node.nodeType === Node.ELEMENT_NODE && node.classList.contains("highlight")) {
+      
+      // 【ここがポイント】disabledが付いて「いない」ものはマスクする
+      if (!node.classList.contains("disabled")) {
+        // マスクした文字列に置き換える（例: [MASK] や ***）
+        copiedText += " [MASK] "; 
+      } else {
+        // disabledが付いているものは、元の電話番号のまま
+        copiedText += node.textContent;
+      }
+    }
+  });
+
+  // クリップボードにコピー
+  navigator.clipboard.writeText(copiedText).then(() => {
+    alert("コピーしました！");
+  });
 });
