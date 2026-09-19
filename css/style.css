@@ -4,6 +4,23 @@
   gap: 20px; /* カラム間のすき間 */
 }
 
+.notice-box {
+  margin: 1.5em 0;
+  padding: 1em 1.2em;
+  background-color: transparent;
+  border: 1px dashed #999; /* 点線（破線）に変更 */
+  border-radius: 4px;
+  color: #444;
+  box-sizing: border-box;
+}
+
+.notice-text {
+  margin: 0;
+  line-height: 1.6;
+  font-size: 0.9em;
+}
+
+
 .box {
   flex: 1; /* 柔軟に伸縮させる */
   min-width: 280px; /* 折り返しの基準となる最小幅 */
