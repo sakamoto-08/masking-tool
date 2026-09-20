@@ -32,6 +32,10 @@
   border: 1px solid #999;
 }
 
+#textInput {
+  height: 150px; /* 出力欄の高さに近い数値を指定 */
+}
+
 #textOutput {
   white-space: pre-wrap;
 }
