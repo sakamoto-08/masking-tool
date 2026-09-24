@@ -1,5 +1,8 @@
 # masking-tool
 
+## デモ
+[https://sakamoto-08.github.io/masking-tool/](https://sakamoto-08.github.io/masking-tool/)
+
 ## AIエージェント協働版について
 このアプリを題材に、AIエージェント（Cursor）と協働しながら
 品質を向上させた版を別リポジトリで作成しました。
